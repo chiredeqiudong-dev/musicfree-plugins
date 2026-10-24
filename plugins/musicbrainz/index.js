@@ -62,7 +62,7 @@ module.exports = {
     platform: 'MusicBrainz',
     version: '1.0.0',
     author: 'turingzy',
-    description: '基于 MusicBrainz 全球开放音乐数据库的元数据检索插件',
+    description: '基于开放音乐百科 MusicBrainz 的音乐元数据搜索插件',
     supportedSearchType: ['music', 'album', 'artist'],
 
     /**

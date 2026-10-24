@@ -12,20 +12,20 @@ const http = axios.create({
 });
 
 module.exports = {
-    platform: 'LRCLIB',
+    platform: 'lrclib',
     version: '1.0.0',
     author: 'turingzy',
-    description: '基于开源开放歌词库 LRCLIB 的歌词检索插件',
-    supportedSearchType: ['music'],
+    description: '基于开源歌词库 lrclib 的歌词搜索插件',
+    supportedSearchType: ['lyric'],
 
     /**
-     * 搜索歌曲歌词
+     * 搜索歌词
      * @param {string} query 搜索关键词（歌曲名 / 歌手）
      * @param {number} page 页码（从 1 开始）
-     * @param {string} type 搜索类型，仅支持 'music'
+     * @param {string} type 搜索类型，支持 'lyric'
      */
     async search(query, page, type) {
-        if (type !== 'music' || page > 1) {
+        if (type !== 'lyric' || page > 1) {
             return { isEnd: true, data: [] };
         }
 
@@ -43,6 +43,7 @@ module.exports = {
                 album: item.albumName || '',
                 duration: typeof item.duration === 'number' ? Math.round(item.duration) : undefined,
                 rawLrc: item.syncedLyrics || item.plainLyrics || '',
+                rawLrcTxt: item.plainLyrics || '',
             }));
 
             return {

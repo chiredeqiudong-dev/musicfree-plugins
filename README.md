@@ -4,13 +4,13 @@
 
 ## 插件列表
 
-**lrclib 歌词检索插件**
+**lrclib 歌词搜索插件**
 
-- 基于开源歌词库 [lrclib](https://lrclib.net/)，提供精准匹配与模糊检索双通道机制，支持时间轴打点滚动 LRC 歌词与纯文本歌词解析。
+- 基于开源歌词库 [lrclib](https://lrclib.net/)，提供精准匹配与模糊搜索双通道机制，支持时间轴打点滚动 LRC 歌词与纯文本歌词解析。
 
-**MusicBrainz 音乐元数据插件**
+**MusicBrainz 音乐元数据搜索插件**
 
-- 基于开放音乐百科 [MusicBrainz](https://musicbrainz.org/) 与 [Cover Art Archive](https://coverartarchive.org/)，提供标准单曲录音、专辑版本、艺术家信息检索，支持专辑完整曲目表展开及官方高清封面获取。
+- 基于开放音乐百科 [MusicBrainz](https://musicbrainz.org/) 与 [Cover Art Archive](https://coverartarchive.org/)，提供全球录音、发行专辑与艺术家资料搜索，支持专辑完整曲目单展开及官方高清封面获取。
 
 ## 安装方式
 

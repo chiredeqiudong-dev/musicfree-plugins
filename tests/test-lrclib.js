@@ -5,23 +5,23 @@ async function runTests() {
     console.log(`正在测试插件: ${plugin.platform} v${plugin.version} by ${plugin.author}`);
     console.log('========================================\n');
 
-    // 1. 测试 search
-    console.log('--- 1. 测试 search 方法 ---');
+    // 1. 测试 search (仅 lyric 类型)
+    console.log('--- 1. 测试 search(type: lyric) 方法 ---');
     try {
         const query = 'Hotel California';
-        const result = await plugin.search(query, 1, 'music');
-        console.log(`搜索关键词 "${query}" 返回结果数量: ${result.data?.length || 0}`);
-        console.log(`isEnd: ${result.isEnd}`);
+        const resultLyric = await plugin.search(query, 1, 'lyric');
+        console.log(`搜索歌词类型(MusicFree 专有) "${query}" 数量: ${resultLyric.data?.length || 0}`);
 
-        if (result.data && result.data.length > 0) {
-            const first = result.data[0];
-            console.log('首条歌曲详情:', {
+        if (resultLyric.data && resultLyric.data.length > 0) {
+            const first = resultLyric.data[0];
+            console.log('首条歌词项详情:', {
                 id: first.id,
                 title: first.title,
                 artist: first.artist,
                 album: first.album,
                 duration: first.duration,
                 hasLrc: !!first.rawLrc,
+                hasRawLrcTxt: !!first.rawLrcTxt,
             });
 
             // 2. 测试 getLyric (利用已有 rawLrc 的缓存)
@@ -76,7 +76,7 @@ async function runTests() {
     }
 
     console.log('\n========================================');
-    console.log('LRCLIB 插件所有测试场景运行完成！');
+    console.log('lrclib 插件所有测试场景运行完成！');
     console.log('========================================');
 }
 
