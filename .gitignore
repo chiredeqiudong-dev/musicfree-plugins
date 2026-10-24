@@ -1,0 +1,73 @@
+# 依赖包
+node_modules/
+.pnp
+.pnp.js
+
+# 构建与打包输出 (如果使用 Rollup / Webpack / esbuild 等打包)
+dist/
+build/
+out/
+
+# 日志文件
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 临时文件与缓存
+.cache/
+.parcel-cache/
+*.tmp
+*.temp
+tmp/
+temp/
+
+# 环境变量与敏感配置 (如抓包用的个人 Cookie、Token 等)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+config.local.json
+secrets.json
+
+# 抓包、自动化与调试产物 (如 Playwright 抓包 HAR、截图、测试输出)
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+*.har
+
+# 本地调试时下载的音视频与测试大文件 (避免污染仓库)
+*.mp3
+*.flac
+*.m4a
+*.wav
+*.mp4
+*.mkv
+
+# 编辑器与操作系统产生的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE 与编辑器配置
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

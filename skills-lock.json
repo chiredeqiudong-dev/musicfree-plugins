@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "musicfree-plugin-dev": {
+      "source": "maotoumao/musicfree-skills",
+      "sourceType": "github",
+      "skillPath": "skills/musicfree-plugin-dev/SKILL.md",
+      "computedHash": "c56852e238e79d8a17e778b267af3a12b68955e16c91fb8bfc737648ee477ecc"
+    },
+    "musicfree-themepack-dev": {
+      "source": "maotoumao/musicfree-skills",
+      "sourceType": "github",
+      "skillPath": "skills/musicfree-themepack-dev/SKILL.md",
+      "computedHash": "3f343c327dc2fcc36c83990dab365002fa058c68ba4144459c3ddf2729722a79"
+    }
+  }
+}
