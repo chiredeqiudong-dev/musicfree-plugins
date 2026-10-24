@@ -83,8 +83,8 @@ module.exports = {
     userVariables: [
         {
             key: 'source',
-            name: '默认音乐源',
-            hint: '可选值：netease（默认）、joox、bilibili，留空使用 netease',
+            name: '音乐源(netease/joox/bilibili)',
+            hint: '默认 netease',
         },
     ],
 
