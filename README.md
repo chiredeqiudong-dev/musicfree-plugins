@@ -4,6 +4,10 @@
 
 ## 插件列表
 
+**GDStudio 音源播放插件**
+
+- 基于 [GD 音乐台](https://music.gdstudio.xyz/) API，提供多品质在线音频流播放（128k 至 FLAC 无损），支持原版/翻译 LRC 歌词解析与专辑高清封面展示。遵循 CC BY-NC 4.0 协议，仅供学习研究使用。
+
 **lrclib 歌词搜索插件**
 
 - 基于开源歌词库 [lrclib](https://lrclib.net/)，提供精准匹配与模糊搜索双通道机制，支持时间轴打点滚动 LRC 歌词与纯文本歌词解析。

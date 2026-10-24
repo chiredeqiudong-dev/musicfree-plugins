@@ -6,7 +6,8 @@
   "scripts": {
     "test:lrclib": "node tests/test-lrclib.js",
     "test:musicbrainz": "node tests/test-musicbrainz.js",
-    "test": "node tests/test-lrclib.js && node tests/test-musicbrainz.js"
+    "test:gdstudio": "node tests/test-gdstudio.js",
+    "test": "node tests/test-lrclib.js && node tests/test-musicbrainz.js && node tests/test-gdstudio.js"
   },
   "devDependencies": {
     "axios": "^1.7.7"
