@@ -26,9 +26,10 @@ async function run() {
     assert(plugin.author === 'turingzy', 'author 为 turingzy');
     assert(
         Array.isArray(plugin.supportedSearchType) &&
-            plugin.supportedSearchType.length === 1 &&
-            plugin.supportedSearchType[0] === 'music',
-        'supportedSearchType 为 [music]'
+            plugin.supportedSearchType.length === 2 &&
+            plugin.supportedSearchType.includes('music') &&
+            plugin.supportedSearchType.includes('lyric'),
+        'supportedSearchType 包含 [music, lyric]'
     );
     assert(typeof plugin.search === 'function', '实现 search 方法');
     assert(typeof plugin.getMediaSource === 'function', '实现 getMediaSource 方法');
@@ -40,8 +41,8 @@ async function run() {
     let firstTrack = null;
     try {
         const searchRes = await plugin.search('Hotel California', 1, 'music');
-        assert(searchRes && Array.isArray(searchRes.data), '返回数据包含 data 数组');
-        assert(searchRes.data.length > 0, `搜索结果数量大于 0 (当前: ${searchRes.data.length})`);
+        assert(searchRes && Array.isArray(searchRes.data), '单曲搜索返回数据包含 data 数组');
+        assert(searchRes.data.length > 0, `单曲搜索结果数量大于 0 (当前: ${searchRes.data.length})`);
 
         firstTrack = searchRes.data[0];
         console.log('   示例单曲:', {
@@ -57,11 +58,18 @@ async function run() {
         assert(typeof firstTrack.title === 'string' && firstTrack.title.length > 0, '单曲 title 为非空字符串');
         assert(typeof firstTrack.artist === 'string', '单曲 artist 字段正常');
 
+        // 测试歌词搜索类型 (lyric)
+        const lyricSearchRes = await plugin.search('Hotel California', 1, 'lyric');
+        assert(
+            lyricSearchRes && Array.isArray(lyricSearchRes.data) && lyricSearchRes.data.length > 0,
+            '歌词类型 (lyric) 搜索返回有效列表'
+        );
+
         // 测试不支持的搜索类型
         const unsupportedRes = await plugin.search('test', 1, 'sheet');
         assert(
             unsupportedRes && unsupportedRes.isEnd && unsupportedRes.data.length === 0,
-            '非 music 搜索类型优雅返回空'
+            '不支持的搜索类型 (sheet) 优雅返回空'
         );
     } catch (e) {
         assert(false, `search 测试异常: ${e.message}`);

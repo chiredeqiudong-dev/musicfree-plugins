@@ -77,7 +77,7 @@ module.exports = {
     author: 'turingzy',
     description:
         '基于 GD 音乐台 (music.gdstudio.xyz) 的多源流媒体播放插件，支持高品质音源播放、歌词与专辑封面展示。遵循 CC BY-NC 4.0 协议，仅供学习研究使用。',
-    supportedSearchType: ['music'],
+    supportedSearchType: ['music', 'lyric'],
     cacheControl: 'no-cache',
 
     userVariables: [
@@ -89,13 +89,13 @@ module.exports = {
     ],
 
     /**
-     * 单曲搜索
+     * 单曲及歌词搜索
      * @param {string} query 关键词
      * @param {number} page 页码（从 1 开始）
-     * @param {string} type 搜索类型 ('music')
+     * @param {string} type 搜索类型 ('music' | 'lyric')
      */
     async search(query, page, type) {
-        if (type !== 'music') {
+        if (type !== 'music' && type !== 'lyric') {
             return { isEnd: true, data: [] };
         }
 
